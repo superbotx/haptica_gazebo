@@ -1,0 +1,141 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://kinect_ros</uri>
+      <pose>-0.8 0 1.65 0 0.25 0</pose>
+      <static>true</static>
+    </include>
+    <model name="kinect_mount">
+      <pose>-1 0 0.75 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.5 0.5 1.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.5 0.5 1.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>Gazebo/WoodPallet</script>
+          </material>
+        </visual>
+      </link>
+    </model>
+   <!--  <model name="box">
+      <pose>0 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>Gazebo/WoodPallet</script>
+          </material>
+        </visual>
+      </link>
+    </model> -->
+   <!--  <include>
+      <uri>model://coke_can</uri>
+      <pose>0 0 1 0 0 0</pose>
+      <static>true</static>
+    </include> -->
+    <include>
+      <uri>model://plastic_cup</uri>
+      <pose>-0.2 0 0.80 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://plastic_cup</uri>
+      <pose>-0.3 0.1 0.80 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://plastic_cup</uri>
+      <pose>-0.1 0.1 0.80 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://plastic_cup</uri>
+      <pose>-0.3 0.3 0.80 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://cafe_table</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <!-- <include>
+      <uri>model://table</uri>
+      <pose>2 2 0 0 0 0</pose>
+      <static>true</static>
+    </include> -->
+   <!--  <include>
+      <uri>model://table_marble</uri>
+      <pose>3 3 0 0 0 0</pose>
+    </include> -->
+    <!-- <model name="sphere">
+      <pose>0 1.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <script>Gazebo/WoodPallet</script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="cylinder">
+      <pose>0 -1.5 0.5 0 1.5707 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>1.0</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>1.0</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>Gazebo/WoodPallet</script>
+          </material>
+        </visual>
+      </link>
+    </model> -->
+  </world>
+</sdf>
+
