@@ -9,7 +9,7 @@
     </include>
     <include>
       <uri>model://kinect_ros</uri>
-      <pose>-0.8 0 1.65 0 0.25 0</pose>
+      <pose>-0.7 0 1.60 0 0.45 0</pose>
       <static>true</static>
     </include>
     <model name="kinect_mount">
@@ -63,23 +63,23 @@
     </include> -->
     <include>
       <uri>model://plastic_cup</uri>
-      <pose>-0.2 0 0.80 0 0 0</pose>
+      <pose>0.2 0 0.80 0 0 0</pose>
     </include>
     <include>
       <uri>model://plastic_cup</uri>
-      <pose>-0.3 0.1 0.80 0 0 0</pose>
+      <pose>0.3 0.1 0.80 0 0 0</pose>
     </include>
     <include>
       <uri>model://plastic_cup</uri>
-      <pose>-0.1 0.1 0.80 0 0 0</pose>
+      <pose>0.1 0.1 0.80 0 0 0</pose>
     </include>
     <include>
       <uri>model://plastic_cup</uri>
-      <pose>-0.3 0.3 0.80 0 0 0</pose>
+      <pose>0.3 0.3 0.80 0 0 0</pose>
     </include>
     <include>
       <uri>model://cafe_table</uri>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0.2 0 0 0 0 0</pose>
     </include>
     <!-- <include>
       <uri>model://table</uri>
