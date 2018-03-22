@@ -9,16 +9,16 @@
     </include>
     <include>
       <uri>model://kinect_ros</uri>
-      <pose>-0.7 0 1.60 0 0.45 0</pose>
+      <pose>-0.7 0 1.4 0 0.45 0</pose>
       <static>true</static>
     </include>
     <model name="kinect_mount">
-      <pose>-1 0 0.75 0 0 0</pose>
+      <pose>-1 0 0.6 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.5 0.5 1.5</size>
+              <size>0.5 0.5 1.2</size>
             </box>
           </geometry>
         </collision>
@@ -67,15 +67,19 @@
     </include>
     <include>
       <uri>model://plastic_cup</uri>
-      <pose>0.3 0.1 0.80 0 0 0</pose>
+      <pose>0.3 -0.1 0.80 0 0 0</pose>
     </include>
     <include>
       <uri>model://plastic_cup</uri>
       <pose>0.1 0.1 0.80 0 0 0</pose>
     </include>
     <include>
-      <uri>model://plastic_cup</uri>
-      <pose>0.3 0.3 0.80 0 0 0</pose>
+      <uri>model://beer</uri>
+      <pose>0.4 0 0.80 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://bowl</uri>
+      <pose>0.3 0.2 0.80 0 0 0</pose>
     </include>
     <include>
       <uri>model://cafe_table</uri>

@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="kinova_robotType" default="j2s7s300"/>
+  <arg name="kinova_robotType" default="m1n6s300"/>
   <arg name="kinova_robotName" default="$(arg kinova_robotType)"/>
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
@@ -13,16 +13,16 @@
 
   <!-- Robot pose -->
   <arg name="x" default="0.2"/>
-  <arg name="y" default="-0.3"/>
-  <arg name="z" default="1.0"/>
+  <arg name="y" default="-0.6"/>
+  <arg name="z" default="0.9"/>
   <arg name="roll" default="0"/>
   <arg name="pitch" default="0"/>
-  <arg name="yaw" default="0"/>
+  <arg name="yaw" default="2.5"/>
 
   <!-- From kinova_gazebo/launch/robot_launch.launch -->
 
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
-  <include file="$(find haptica_gazebo)/launch/qr_demo_world.launch">
+  <include file="$(find haptica_gazebo)/launch/demo_world.launch">
     <!-- <arg name="world_name" value="$(find haptica_gazebo)/worlds/qr_demo.world"/> -->
     <arg name="debug" value="$(arg debug)" />
     <arg name="gui" value="$(arg gui)" />
@@ -62,7 +62,7 @@
     <arg name="is7dof" value="$(arg is7dof)"/>
   </include> -->
 
-  <include file="$(find j2s7s300_moveit_config)/launch/j2s7s300_gazebo_demo.launch">
+  <include file="$(find m1n6s300_moveit_config)/launch/m1n6s300_gazebo_demo.launch">
   </include>
 
 

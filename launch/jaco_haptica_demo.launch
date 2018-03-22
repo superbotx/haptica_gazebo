@@ -1,0 +1,69 @@
+<launch>
+
+  <arg name="kinova_robotType" default="j2s7s300"/>
+  <arg name="kinova_robotName" default="$(arg kinova_robotType)"/>
+  <arg name="paused" default="true"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="use_trajectory_controller" default="true"/>
+  <arg name="is7dof" default="true"/> 
+
+
+  <!-- Robot pose -->
+  <arg name="x" default="0.2"/>
+  <arg name="y" default="-0.6"/>
+  <arg name="z" default="0.9"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="2.5"/>
+
+  <!-- From kinova_gazebo/launch/robot_launch.launch -->
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find haptica_gazebo)/launch/demo_world.launch">
+    <!-- <arg name="world_name" value="$(find haptica_gazebo)/worlds/qr_demo.world"/> -->
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro --inorder '$(find kinova_description)/urdf/$(arg kinova_robotType)_standalone.xacro'" />
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model $(arg kinova_robotName) -param robot_description
+    -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+
+  <!-- ros_control launch file -->
+  <include file="$(find kinova_control)/launch/kinova_control.launch">
+    <arg name="kinova_robotName" value="$(arg kinova_robotName)"/>
+    <arg name="kinova_robotType" value="$(arg kinova_robotType)"/>
+    <arg name="use_trajectory_controller" value="$(arg use_trajectory_controller)"/>
+    <arg name="is7dof" value="$(arg is7dof)"/>
+  </include>
+
+  <!-- rqt launch file -->
+  <!--  
+  <include file="$(find kinova_control)/launch/$kinova_rqt.launch">
+    <arg name="kinova_robotType" value="$(arg kinova_robotName)"/>
+  </include> 
+  -->
+  
+ <!--  <include file="$(find kinova_gazebo)/launch/robot_launch.launch">
+    <arg name="kinova_robotName" value="$(arg kinova_robotName)"/>
+    <arg name="kinova_robotType" value="$(arg kinova_robotType)"/>
+    <arg name="use_trajectory_controller" value="$(arg use_trajectory_controller)"/>
+    <arg name="is7dof" value="$(arg is7dof)"/>
+  </include> -->
+
+  <include file="$(find j2s7s300_moveit_config)/launch/j2s7s300_gazebo_demo.launch">
+  </include>
+
+
+</launch>
