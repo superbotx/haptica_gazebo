@@ -38,5 +38,6 @@
   <!-- rviz for kinect topics launch -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find haptica_gazebo)/rviz/kinect.rviz"/>
   <node pkg="tf" type="static_transform_publisher" name="camera_link_to_camera_base" args="0 1 0 0 0 1.75 /camera_link /camera_base 10" />
+  <node pkg="tf" type="static_transform_publisher" name="world_to_camera_link" args="0.0001 0 0 0 0 0 /world /camera_link 10" />
 
 </launch>
